@@ -12,7 +12,7 @@ void main() {
       MyApp()); // runApp is a method of material.dart that takes our widget tree class and runs that
 }
 
-// void main() ==> runApp(MyApp());    --> Short Notation
+// void main() ==> runApp(MyApp());    --> Short Notatio
 
 /**
  * StatelessWidget is a Base class present in material.dart pacakage
@@ -23,10 +23,14 @@ void main() {
 class MyApp extends StatelessWidget // class name in capital
 {
   Widget build(BuildContext context) {
+    // return MaterialApp( home: Text( 'Hello'),);
     return MaterialApp(
-      // MaterialApp is a Class which is taking argument of type Text : constructor
-      home: Text(
-          'Hello'), // home:   --> this is used based on concept of named argument --> useful when we have lot of argmnets
-    ); //
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Medha'),
+        ),
+        body: Text('This is my default text!'),
+      ),
+    );
   }
 }
