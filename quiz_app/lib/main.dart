@@ -49,15 +49,12 @@ class MyApp extends StatelessWidget // class name in capital
         body: Column(children: <Widget>[
           Text(questions[
               questionIndex]), //Change question Index dynamically whenever press a button
+
           ElevatedButton(
-              onPressed: () => print(
-                  'anonymous function single line'), //Anonumous or unnamed function
-              child: Text('Medha')), // onPressed -> functinon | child -> text
-          ElevatedButton(
-              onPressed: () {
-                print('anonymous function multiple line');
-              },
-              child: Text('Medha1')),
+              onPressed: answerQuestion, // reference to answerQuestion function
+              child: Text('Medha')),
+
+          ElevatedButton(onPressed: answerQuestion, child: Text('Medha1')),
         ]),
       ),
     );
