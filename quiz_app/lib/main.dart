@@ -33,11 +33,12 @@ class MyApp extends StatelessWidget // class name in capital
   Widget build(BuildContext context) {
     var chooseOne = ['What\'s your name?', 'How are you?']; //just example
 
+    /** 
     //function to be used with onPressed of ElevatedButton
     void functionUse() {
       print('lEARNING RELATION BETWEEN BUTTON AND CALL ');
     }
-
+    */
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -48,9 +49,14 @@ class MyApp extends StatelessWidget // class name in capital
           //tells dart that it holds list of widget
           Text('My name is medha'),
           ElevatedButton(
-              onPressed: functionUse, //pass reference to the function
+              onPressed: () => print(
+                  'anonymous function single line'), //Anonumous or unnamed function
               child: Text('Medha')), // onPressed -> functinon | child -> text
-          ElevatedButton(onPressed: functionUse, child: Text('Medha1')),
+          ElevatedButton(
+              onPressed: () {
+                print('anonymous function multiple line');
+              },
+              child: Text('Medha1')),
         ]),
       ),
     );
