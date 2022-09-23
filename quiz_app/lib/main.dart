@@ -29,25 +29,26 @@ void main() {
  */
 class MyApp extends StatelessWidget // class name in capital
 {
+  var questionIndex = 0; // variable used to choose question number
+
+  void answerQuestion() {
+    // function to dynamically change the question to be displayed
+    questionIndex = questionIndex + 1;
+    print(questionIndex); // just debugging purpose
+  }
+
   @override //bcz we have overriden the build function of Material.dart
   Widget build(BuildContext context) {
-    var chooseOne = ['What\'s your name?', 'How are you?']; //just example
+    var questions = ['What\'s your name?', 'How are you?']; //just example
 
-    /** 
-    //function to be used with onPressed of ElevatedButton
-    void functionUse() {
-      print('lEARNING RELATION BETWEEN BUTTON AND CALL ');
-    }
-    */
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('Medha'),
         ),
         body: Column(children: <Widget>[
-          // Row or Column invisible widget
-          //tells dart that it holds list of widget
-          Text('My name is medha'),
+          Text(questions[
+              questionIndex]), //Change question Index dynamically whenever press a button
           ElevatedButton(
               onPressed: () => print(
                   'anonymous function single line'), //Anonumous or unnamed function
