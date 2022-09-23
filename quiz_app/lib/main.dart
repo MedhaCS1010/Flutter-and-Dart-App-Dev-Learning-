@@ -27,10 +27,15 @@ void main() {
  * use invisible widget like coloumn or row --> kind of list 
  * 
  */
-class MyApp extends StatelessWidget // class name in capital
+class MyApp extends StatefulWidget // class name in capital
 {
-  var questionIndex = 0; // variable used to choose question number
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
+  var questionIndex = 0;
+  // variable used to choose question number
   void answerQuestion() {
     // function to dynamically change the question to be displayed
     questionIndex = questionIndex + 1;
