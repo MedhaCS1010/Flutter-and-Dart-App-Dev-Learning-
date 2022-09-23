@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget // class name in capital
         appBar: AppBar(
           title: Text('Medha'),
         ),
-        body: Row(children: <Widget>[
+        body: Column(children: <Widget>[
           // Row or Column invisible widget
           //tells dart that it holds list of widget
           Text('My name is medha'),
