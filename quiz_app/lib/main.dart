@@ -20,6 +20,41 @@ void main() {
  * build function has special input parameter BuildContext 
  * build function return type is Widget 
  */
+
+/**
+ * Body with multiple widget 
+ * using concept of invisible widget for formatting 
+ * use invisible widget like coloumn or row --> kind of list 
+ * 
+ */
+class MyApp extends StatelessWidget // class name in capital
+{
+  @override //bcz we have overriden the build function of Material.dart
+  Widget build(BuildContext context) {
+    var chooseOne = ['What\'s your name?', 'How are you?']; //just example
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Medha'),
+        ),
+        body: Row(children: <Widget>[
+          // Row or Column invisible widget
+          //tells dart that it holds list of widget
+          Text('My name is medha'),
+          ElevatedButton(
+              onPressed: null,
+              child: Text('Medha')), // onPressed -> functinon | child -> text
+          ElevatedButton(onPressed: null, child: Text('Medha1')),
+        ]),
+      ),
+    );
+  }
+}
+
+/** 
+ * Body with single widget 
+ * 
 class MyApp extends StatelessWidget // class name in capital
 {
   Widget build(BuildContext context) {
@@ -29,8 +64,11 @@ class MyApp extends StatelessWidget // class name in capital
         appBar: AppBar(
           title: Text('Medha'),
         ),
+        //   body: Text('This is my default text!'),   --> to have multiple widget in body
         body: Text('This is my default text!'),
       ),
     );
   }
 }
+
+*/
