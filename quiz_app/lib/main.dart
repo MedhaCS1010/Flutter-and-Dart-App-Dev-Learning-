@@ -38,7 +38,10 @@ class _MyAppState extends State<MyApp> {
   // variable used to choose question number
   void answerQuestion() {
     // function to dynamically change the question to be displayed
-    questionIndex = questionIndex + 1;
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+
     print(questionIndex); // just debugging purpose
   }
 
